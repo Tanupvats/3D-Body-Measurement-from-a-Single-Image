@@ -8,7 +8,9 @@ The system employs a sophisticated multi-stage computer vision pipeline, leverag
 
 ## Demo
 
-[![Demo body measurement](body_measurement_demo.gif)]()
+<p align="center">
+<img src="body_measurement_demo.gif" alt="Demo body measurement" width="100%">
+</p>
 
 ## System Architecture Overview
 
@@ -74,7 +76,7 @@ The final step is to present all analyzed information to the user in a visually 
 
 -----
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 This project is built using the following core libraries and technologies:
 
