@@ -138,4 +138,5 @@ streamlit run app.py
 4.  Click the "Run" button (or similar) to start the analysis.
 5.  Explore the results across the four visualization tabs.
 
-
+## Author
+**Tanup Vats**
