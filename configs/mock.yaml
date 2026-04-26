@@ -1,0 +1,16 @@
+# Mock pipeline — no model downloads needed. Used by tests.
+# Outputs are NOT real measurements; they are determined by the synthetic
+# capsule body and exist solely so the pipeline can run end-to-end in CI.
+
+models_dir: ~/.cache/bodymeasure/models
+
+detector_name: mock
+parser_name: mock
+pose_name: mock
+regressor_name: heuristic
+body_model: synthetic
+use_optimizer: false              # synthetic body model has no torch forward
+
+qc:
+  min_image_resolution_px: 64     # tiny test images are okay
+  require_full_body_visible: false

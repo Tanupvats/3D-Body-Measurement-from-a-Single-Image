@@ -1,0 +1,5 @@
+subject_id,height_cm,gender,front_image,side_image,chest_circumference_cm,waist_circumference_cm,hip_circumference_cm,inseam_cm,arm_length_cm
+subject_001,178.5,male,images/s001_front.jpg,images/s001_side.jpg,98.5,82.0,99.0,82.5,61.0
+subject_002,164.0,female,images/s002_front.jpg,images/s002_side.jpg,89.0,69.5,95.0,75.5,55.5
+subject_003,182.0,male,images/s003_front.jpg,,104.0,88.5,103.0,84.0,63.0
+subject_004,170.0,female,images/s004_front.jpg,images/s004_side.jpg,92.0,72.0,98.5,77.0,57.0

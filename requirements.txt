@@ -1,18 +1,36 @@
+# --- core: required for any inference ---
+numpy>=1.24
+scipy>=1.10
+pillow>=10.0
+opencv-python-headless>=4.8
+trimesh>=4.0
+networkx>=3.0
+pyyaml>=6.0
+pydantic>=2.0
 
+# --- ML stack: required for real (non-mock) regressor + optimizer ---
+torch>=2.1
+smplx>=0.1.28
 
-fastapi>=0.100.0
-uvicorn>=0.23.0
-pydantic>=2.0.0
+# --- detector / parser / pose adapters (pick what you need) ---
+ultralytics>=8.1            # for YoloPersonDetector + UltralyticsPose
+rembg>=2.0                  # for RembgParser fallback
 
+# --- API + UI ---
+fastapi>=0.110
+uvicorn[standard]>=0.27
+streamlit>=1.30
+plotly>=5.18                # 3D mesh viewer in the streamlit app
+python-multipart>=0.0.7     # for multipart uploads in FastAPI
 
-trimesh>=3.23.0
-opencv-python>=4.8.0.76
-numpy>=1.24.0
+# --- optional: differentiable silhouette loss in the optimizer ---
+# pytorch3d>=0.7
+# (install per https://github.com/facebookresearch/pytorch3d INSTALL.md)
 
+# --- optional: RTMPose adapter ---
+# mmpose>=1.3
+# mmcv>=2.1
+# mmengine>=0.10
 
-streamlit>=1.25.0
-plotly>=5.15.0
-Pillow>=10.0.0
-
-pytest>=7.4.0
-httpx>=0.24.1
+# --- testing ---
+pytest>=8.0

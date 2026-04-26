@@ -1,0 +1,49 @@
+# Default configuration for the bodymeasure pipeline.
+# Override any field by passing a different YAML to --config.
+
+models_dir: ~/.cache/bodymeasure/models
+
+# Pretrained model selection. Anything ending with `_name` is a string
+# resolved by bodymeasure.core.factory.
+detector_name: yolo                 # {yolo, mock}
+parser_name: rembg                  # {sapiens, rembg, mock}
+pose_name: ultralytics              # {ultralytics, rtmpose, mock}
+regressor_name: heuristic           # {heuristic, multihmr, tokenhmr, sapiens}
+body_model: smplx                   # {smplx, synthetic}
+use_optimizer: true
+
+camera:
+  default_hfov_deg: 60.0
+  sensor_diag_mm: 7.0
+
+detection:
+  min_person_score: 0.4
+  min_person_pixel_area_frac: 0.04
+
+pose:
+  min_keypoint_confidence: 0.3
+  convention: coco_17
+
+optimizer:
+  stage1_iters: 80
+  stage2_iters: 120
+  stage3_iters: 80
+  height_constraint_weight: 50.0
+  height_tol_cm: 0.5
+
+measurement:
+  convex_hull_slack_cm: 0.0    # calibrate against ground truth before changing
+  enable_geodesic: true
+
+qc:
+  min_image_resolution_px: 384
+  require_full_body_visible: true
+
+finetune:
+  batch_size: 16
+  lr: 0.001
+  weight_decay: 0.0001
+  epochs: 200
+  val_split: 0.2
+  early_stop_patience: 25
+  seed: 42
